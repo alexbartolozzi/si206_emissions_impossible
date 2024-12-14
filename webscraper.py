@@ -14,12 +14,24 @@ def get_celebrity_airplanes():
 
 
     celeb_list = []
+    # for each in parentspan:
+    #     name_tag = each.find('a', class_="maincolor")
+    #     unwanted_entries = {"PST", "EST", "CST", "MST", ""}
+    #     if not name_tag or name_tag.text.strip() in unwanted_entries:
+    #             continue 
+    #     name = name_tag.text.strip()
+    unwanted_entries = {"PST", "EST", "CST", "MST", "", "Bahamas"}  # Skip unwanted names
+
     for each in parentspan:
+        # Get the name
         name_tag = each.find('a', class_="maincolor")
-        unwanted_entries = {"PST", "EST", "CST", "MST", ""}
-        if not name_tag or name_tag.text.strip() in unwanted_entries:
-                continue 
+        if not name_tag:  # Skip if name_tag is None
+            continue
         name = name_tag.text.strip()
+
+        # Skip unwanted entries
+        if name in unwanted_entries:
+            continue
             
         plane_info = name_tag.find_next(text=True)  
         plane_name = plane_info.find_next(text=True).strip() if plane_info else None  
@@ -50,16 +62,19 @@ def insertcelebtable(celeb_list):
 
     conn = sqlite3.connect('celebrity_airplane.db')  # Creates or connects to a database
     cursor = conn.cursor()
+    cursor.execute('DELETE FROM Airplane')
 
     for celeb in celeb_list:
         cursor.execute('''
-            INSERT INTO Airplanes (name, plane, tail_number)
+            INSERT INTO Airplane (celebname, planename, tail_number)
             VALUES (?, ?, ?)
         ''', (celeb['name'], celeb['plane'], celeb['tailnumber']))
     
+    conn.commit()
+    conn.close()
 
-    cursor.close()
-
+celeb_list = get_celebrity_airplanes()
+insertcelebtable(celeb_list)
 
 
     
