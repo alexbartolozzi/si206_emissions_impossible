@@ -66,7 +66,6 @@ def fetch_plane_metadata(tail_number):
     if response.status_code == 200:
         data = response.json().get("data", [])
         hex_icao = hex_icao = data[0].get("hexIcao", "")
-        plane_name = data[0].get("typeName", "")
         first_flight_date = data[0].get("firstFlightDate", "")
         try:
             # convert to unix timestamp
@@ -79,11 +78,20 @@ def fetch_plane_metadata(tail_number):
         return {
             "tail_number": tail_number,
             "icao": hex_icao,
-            "plane_name": plane_name,
             "first_flight_date": first_flight_date
         }
     else:
         print(f"Error: {response.status_code}, {response.text}")
+
+def get_list_of_src_dst_coords(list_of_flights):
+    src_dst_coords = []
+    for src, dst in list_of_flights:
+        src_data = airport_data(src)
+        dst_data = airport_data(dst)
+        src_coords = (src_data["latitude"], src_data["longitude"])
+        dst_coords = (dst_data["latitude"], dst_data["longitude"])
+        src_dst_coords.append((src_coords, dst_coords))
+    return src_dst_coords
 
 
 def fetch_flight_data(plane_icao, initial_date):
@@ -110,9 +118,7 @@ def fetch_flight_data(plane_icao, initial_date):
         if done:
             break
         start_date = end_date
-    return list_of_flights
-
-
+    return get_list_of_src_dst_coords(list_of_flights)
 
 # def fuel_consumption():
 #     pass
