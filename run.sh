@@ -10,7 +10,8 @@ source env/bin/activate
 # done
 
 echo "python main.py new 0"
-for i in {1..63}
+for i in {1..56}
 do
   echo "python main.py _ $i"
 done
+echo "python main.py done 57"

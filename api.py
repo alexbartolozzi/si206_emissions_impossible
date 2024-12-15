@@ -13,7 +13,6 @@ CUTOFF_DATE = datetime(2024, 10, 1).timestamp()
 AIRPORT_API_KEY= "e3b202405eafc13e73d2d4f8eee15fdbf0ee36610d136bdb1df5c17edadd32df535d6c7b6b3eedf130bd05cf46b4aaa5"
 
 def airport_data(icao_code):
-    print(AIRPORT_API_KEY)
     url = f"https://airportdb.io/api/v1/airport/{icao_code}?apiToken={AIRPORT_API_KEY}"
     params = {
         "limit": 1
@@ -50,12 +49,10 @@ def airport_data(icao_code):
 flight_api_key = os.getenv("FLIGHT_API_KEY")
 
 def fetch_plane_metadata(tail_number):
-    print(flight_api_key)
     url = "https://api.magicapi.dev/api/v1/aedbx/aerodatabox/aircrafts/search/term"
-    tail_number = "N898TS"
     params = {
         "q": tail_number,
-        "limit": 10
+        "limit": 1
     }
     headers = {
         "Authorization": f"Bearer {flight_api_key}"
@@ -64,9 +61,10 @@ def fetch_plane_metadata(tail_number):
     response = requests.get(url, headers=headers, params=params)
 
     if response.status_code == 200:
-        data = response.json().get("data", [])
-        hex_icao = hex_icao = data[0].get("hexIcao", "")
-        first_flight_date = data[0].get("firstFlightDate", "")
+        data = response.json()
+        items = data.get("items", [])[0]
+        hex_icao = hex_icao = items.get("hexIcao", "")
+        first_flight_date = items.get("firstFlightDate", "")
         try:
             # convert to unix timestamp
             first_flight_date = datetime.strptime(first_flight_date, "%Y-%m-%d").timestamp()
@@ -85,12 +83,16 @@ def fetch_plane_metadata(tail_number):
 
 def get_list_of_src_dst_coords(list_of_flights):
     src_dst_coords = []
+    print(f"Fetching data for {len(list_of_flights)} flights")
     for src, dst in list_of_flights:
+        if not src or not dst:
+            continue
         src_data = airport_data(src)
         dst_data = airport_data(dst)
         src_coords = (src_data["latitude"], src_data["longitude"])
         dst_coords = (dst_data["latitude"], dst_data["longitude"])
         src_dst_coords.append((src_coords, dst_coords))
+        print(f"Added {src} to {dst} to list")
     return src_dst_coords
 
 
@@ -99,14 +101,18 @@ def fetch_flight_data(plane_icao, initial_date):
     api = OpenSkyApi(username="username", password="password")
     start_date = initial_date
     # lowercase the icao code
-    icao = icao.lower()
+    plane_icao = plane_icao.lower()
 
     # list of tuples with src airport icao and dst airport icao
     list_of_flights = []
     while True:
         start_date, end_date, done = gen_date_range(start_date)
         print(f"Fetching data from {start_date} to {end_date}")
-        data = api.get_flights_by_aircraft(icao24=plane_icao, begin=start_date, end=end_date)
+        try:
+            data = api.get_flights_by_aircraft(icao24=plane_icao, begin=start_date, end=end_date)
+        except Exception as e:
+            print(f"Error: {e}")
+            data = []
         if data:
             for flight in data:
                 list_of_flights.append(
@@ -131,3 +137,4 @@ def fetch_flight_data(plane_icao, initial_date):
 ## Jet fuel emits approximately 9.57 kg of CO2 per gallon (or 3.16 kg of CO2 per liter) when burned.
 
 ## CO2 Emissions (kg) = (Fuel Burn in liters) x (Emission Factor: 3.16 kg CO2/liter)
+
