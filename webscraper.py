@@ -26,6 +26,9 @@ def get_celebrity_airplanes():
         plane_name = plane_info.find_next(string=True).strip() if plane_info else None
         if plane_name and '(' in plane_name:
             plane_name = plane_name.split('(')[0].strip()
+        
+        if plane_name == '.' or plane_name == 'traveled to Hillsboro Airport' or plane_name == 'traveled to Opa Locka Airport':
+            continue 
 
         # Extract tail number
         tailnumber_tag = name_tag.find_next("a", href=True)
