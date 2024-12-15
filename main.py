@@ -15,7 +15,7 @@ def get_celeb_and_tail(run_count):
     cursor = conn.cursor()
     cursor.execute(
         """
-            SELECT celeb_id, tail_number
+            SELECT Celebrity.id, tail_number
             FROM Airplane
             LIMIT 1
             OFFSET ?

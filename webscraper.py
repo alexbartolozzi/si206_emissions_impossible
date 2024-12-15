@@ -80,9 +80,9 @@ def insert_data(celeb_list):
             cursor.execute('SELECT id FROM Airplane WHERE tail_number = ?', (tail_number,))
             if not cursor.fetchone():
                 cursor.execute('''
-                    INSERT INTO Airplane (celeb_id, planename_id, tail_number)
-                    VALUES (?, ?, ?)
-                ''', (celeb_id, planename_id, tail_number))
+                    INSERT INTO Airplane (planename_id, tail_number)
+                    VALUES (?, ?)
+                ''', (planename_id, tail_number))
                 
                 # If desired, update Celebrity's plane_id to reference this Airplane
                 # airplane_id = cursor.lastrowid
