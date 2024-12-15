@@ -32,3 +32,5 @@ CREATE TABLE IF NOT EXISTS Celebrity (
 conn.commit()
 conn.close()
 
+# create flights db
+

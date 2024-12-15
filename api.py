@@ -8,28 +8,30 @@ import os
 
 load_dotenv()
 
+CUTOFF_DATE = datetime(2024, 10, 1).timestamp()
+
 AIRPORT_API_KEY= "e3b202405eafc13e73d2d4f8eee15fdbf0ee36610d136bdb1df5c17edadd32df535d6c7b6b3eedf130bd05cf46b4aaa5"
 
 def airport_data(icao_code):
     print(AIRPORT_API_KEY)
     url = f"https://airportdb.io/api/v1/airport/{icao_code}?apiToken={AIRPORT_API_KEY}"
     params = {
-        "limit": 10
+        "limit": 1
     }
     headers = {
         "Authorization": f"Bearer {AIRPORT_API_KEY}"
     }
 
-response = requests.get(url)
 
+    response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
 
         airport_name = data.get("name", "")
         city = data.get("municipality", "")
         country = data.get("iso_country", "")
-        latitude = data.get("latitude", 0.0)
-        longitude = data.get("longitude", 0.0)
+        latitude = data.get("latitude_deg", 0.0)
+        longitude = data.get("longitude_deg", 0.0)
 
         return {
             "icao_code": icao_code,
@@ -69,12 +71,11 @@ def fetch_plane_metadata(tail_number):
         try:
             # convert to unix timestamp
             first_flight_date = datetime.strptime(first_flight_date, "%Y-%m-%d").timestamp()
-            # if first flight date is before 2015, set it to 2015
-            if first_flight_date < 1420070400:
-                first_flight_date = 1420070400
+            # make first flight date 2024 March 1st if before
+            if first_flight_date < CUTOFF_DATE:
+                first_flight_date = CUTOFF_DATE
         except: 
-            first_flight_date = 1420070400
-
+            first_flight_date = CUTOFF_DATE
         return {
             "tail_number": tail_number,
             "icao": hex_icao,
@@ -85,28 +86,32 @@ def fetch_plane_metadata(tail_number):
         print(f"Error: {response.status_code}, {response.text}")
 
 
-def fetch_flight_data(icao, initial_date):
-    api = OpenSkyApi()
-    s = api.get_states()
-    print(s)
+def fetch_flight_data(plane_icao, initial_date):
+    # phony auth somehow works
+    api = OpenSkyApi(username="username", password="password")
     start_date = initial_date
     # lowercase the icao code
     icao = icao.lower()
-    print(icao)
 
-    data = api.get_flights_by_aircraft("3c675a", 1517184000, 1517270400)
-    for flight in data:
-        print(flight)
+    # list of tuples with src airport icao and dst airport icao
+    list_of_flights = []
     while True:
         start_date, end_date, done = gen_date_range(start_date)
         print(f"Fetching data from {start_date} to {end_date}")
-        data = api.get_flights_by_aircraft(icao24=icao, begin=start_date, end=end_date)
-        print(data)
+        data = api.get_flights_by_aircraft(icao24=plane_icao, begin=start_date, end=end_date)
+        if data:
+            for flight in data:
+                list_of_flights.append(
+                    (
+                        flight.estDepartureAirport, 
+                        flight.estArrivalAirport
+                    )
+                )
         if done:
             break
         start_date = end_date
+    return list_of_flights
 
-fetch_flight_data("3c675a", 1420070400)
 
 
 # def fuel_consumption():
