@@ -84,9 +84,8 @@ def insert_data(celeb_list):
                     VALUES (?, ?)
                 ''', (planename_id, tail_number))
                 
-                # If desired, update Celebrity's plane_id to reference this Airplane
-                # airplane_id = cursor.lastrowid
-                # cursor.execute('UPDATE Celebrity SET plane_id = ? WHERE id = ?', (airplane_id, celeb_id))
+                airplane_id = cursor.lastrowid
+                cursor.execute('UPDATE Celebrity SET plane_id = ? WHERE id = ?', (airplane_id, celeb_id))
 
     conn.commit()
     conn.close()
