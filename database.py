@@ -16,6 +16,11 @@ CREATE TABLE IF NOT EXISTS Airplane (
 )
 ''')
 
+cursor.execute('''
+               CREATE TABLE IF NOT EXISTS Plane (
+               planename TEXT NOT NULL,
+               planeid INTEGER PRIMARY KEY AUTOINCREMENT)
+               ''')
 
 # celebrity table
 # id, name, plane id

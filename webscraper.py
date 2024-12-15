@@ -14,12 +14,7 @@ def get_celebrity_airplanes():
 
 
     celeb_list = []
-    # for each in parentspan:
-    #     name_tag = each.find('a', class_="maincolor")
-    #     unwanted_entries = {"PST", "EST", "CST", "MST", ""}
-    #     if not name_tag or name_tag.text.strip() in unwanted_entries:
-    #             continue 
-    #     name = name_tag.text.strip()
+
     unwanted_entries = {"PST", "EST", "CST", "MST", "", "Bahamas"}  # Skip unwanted names
 
     for each in parentspan:
@@ -54,7 +49,22 @@ def get_celebrity_airplanes():
             })
     return celeb_list
 
+def insertplanename(celeb_list):
+    conn = sqlite3.connect('celebrity_airplane.db') 
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM Plane')  
 
+    for celeb in celeb_list:
+       
+        cursor.execute('SELECT 1 FROM Plane WHERE planename = ?', (celeb['plane'],))
+        if not cursor.fetchone(): 
+            cursor.execute('''
+                INSERT INTO Plane (planename)
+                VALUES (?)
+            ''', (celeb['plane'],))
+
+    conn.commit()  # Save changes
+    conn.close() 
 
 
 
@@ -75,6 +85,8 @@ def insertcelebtable(celeb_list):
 
 celeb_list = get_celebrity_airplanes()
 insertcelebtable(celeb_list)
+insertplanename(celeb_list)
+
 
 
     
