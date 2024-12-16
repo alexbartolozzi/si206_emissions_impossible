@@ -100,12 +100,13 @@ def fetch_flight_data(plane_icao, initial_date, halfway=False):
     # phony auth somehow works
     if halfway:
         # api = OpenSkyApi(username="tropicalsimr", password="OPENSKY2024")
-        # api = OpenSkyApi(username="troptropsimr", password="OPENSKY2024")
-        api = OpenSkyApi(username="Lev2", password="Football96!")
+        api = OpenSkyApi(username="username", password="password")
+        # api = OpenSkyApi(username="Lev2", password="Football96!")
     else:
         # Lev Football96!
+        api = OpenSkyApi(username="alexbart", password="OPENSKY2024")
         # api = OpenSkyApi(username="troptropical", password="OPENSKY2024")
-        api = OpenSkyApi(username="Lev3", password="Football96!")
+        # api = OpenSkyApi(username="Lev3", password="Football96!")
     start_date = initial_date
     # lowercase the icao code
     plane_icao = plane_icao.lower()
