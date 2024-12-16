@@ -1,0 +1,466 @@
+{
+    "Bill Gates (plane #1)": {
+        "jet_name": 1,
+        "total_emissions": 83973.02715750235,
+        "num_flights": 8,
+        "avg_distance": 1770220.4539102048,
+        "max_dist": 6501772.4388357885,
+        "min_dist": 26093.940995145214
+    },
+    "Bill Gates (plane #2)": {
+        "jet_name": 2,
+        "total_emissions": 90322.03580524941,
+        "num_flights": 9,
+        "avg_distance": 1692500.245572829,
+        "max_dist": 4326749.995830454,
+        "min_dist": 155122.67082735838
+    },
+    "Jerry Jones\u2019s": {
+        "jet_name": 3,
+        "total_emissions": 96462.08096967309,
+        "num_flights": 12,
+        "avg_distance": 1355666.6510622639,
+        "max_dist": 7056247.603462298,
+        "min_dist": 242050.35869501004
+    },
+    "Oprah Winfrey\u2019s": {
+        "jet_name": 4,
+        "total_emissions": 50891.006635199905,
+        "num_flights": 5,
+        "avg_distance": 1716518.8187723844,
+        "max_dist": 4017869.660250679,
+        "min_dist": 0
+    },
+    "Mark Cuban\u2019s": {
+        "jet_name": 5,
+        "total_emissions": 100360.4283417346,
+        "num_flights": 11,
+        "avg_distance": 1538676.6140816612,
+        "max_dist": 2339527.529586013,
+        "min_dist": 1000486.2509091736
+    },
+    "Luke Bryan\u2019s": {
+        "jet_name": 6,
+        "total_emissions": 148444.78274904576,
+        "num_flights": 21,
+        "avg_distance": 1192128.7883967762,
+        "max_dist": 3356149.697205149,
+        "min_dist": 281043.8545754429
+    },
+    "David Geffen\u2019s": {
+        "jet_name": 7,
+        "total_emissions": 191613.154399371,
+        "num_flights": 10,
+        "avg_distance": 3231490.269081871,
+        "max_dist": 9820281.705847763,
+        "min_dist": 362817.56131803506
+    },
+    "Blake Shelton\u2019s": {
+        "jet_name": 8,
+        "total_emissions": 114032.7437240156,
+        "num_flights": 13,
+        "avg_distance": 1479325.5346487714,
+        "max_dist": 2355222.056085829,
+        "min_dist": 237728.36998227015
+    },
+    "P. Diddy\u2019s": {
+        "jet_name": 9,
+        "total_emissions": 231167.9915547268,
+        "num_flights": 18,
+        "avg_distance": 2165871.700005535,
+        "max_dist": 8102579.804813217,
+        "min_dist": 83591.62529889203
+    },
+    "Kenny Chesney\u2019s": {
+        "jet_name": 10,
+        "total_emissions": 34455.05860487793,
+        "num_flights": 8,
+        "avg_distance": 726340.9638505625,
+        "max_dist": 1249975.180349591,
+        "min_dist": 141008.4623624169
+    },
+    "Steve Wynn\u2019s": {
+        "jet_name": 11,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Travis Scott\u2019s": {
+        "jet_name": 12,
+        "total_emissions": 167725.9576938505,
+        "num_flights": 23,
+        "avg_distance": 1229843.8574212745,
+        "max_dist": 3822670.865465562,
+        "min_dist": 364468.39625282865
+    },
+    "Kid Rock\u2019s": {
+        "jet_name": 13,
+        "total_emissions": 226307.3043080824,
+        "num_flights": 15,
+        "avg_distance": 2544396.822114765,
+        "max_dist": 10501123.91513083,
+        "min_dist": 0
+    },
+    "Elon Musk (plane #1)": {
+        "jet_name": 14,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Donald Trump\u2019s": {
+        "jet_name": 15,
+        "total_emissions": 166189.6611191306,
+        "num_flights": 17,
+        "avg_distance": 1648665.7389034578,
+        "max_dist": 2442761.9957817793,
+        "min_dist": 377417.8751894404
+    },
+    "Matt Damon\u2019s": {
+        "jet_name": 16,
+        "total_emissions": 154226.79752964797,
+        "num_flights": 22,
+        "avg_distance": 1182264.6163661995,
+        "max_dist": 2685879.0032727295,
+        "min_dist": 115924.40230463128
+    },
+    "Lady Gaga\u2019s": {
+        "jet_name": 17,
+        "total_emissions": 85740.50989147117,
+        "num_flights": 6,
+        "avg_distance": 2409973.924188618,
+        "max_dist": 11545969.050583392,
+        "min_dist": 30666.89843531027
+    },
+    "Jim Carrey\u2019s": {
+        "jet_name": 18,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Taylor Swift (plane #1)": {
+        "jet_name": 19,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Sergey Brin\u2019s": {
+        "jet_name": 20,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Eric Schmidt\u2019s": {
+        "jet_name": 21,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Under Armour Corporation\u2019s": {
+        "jet_name": 22,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Ron DeSantis\u2019s": {
+        "jet_name": 23,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Mark Zuckerberg\u2019s": {
+        "jet_name": 24,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Rupert Murdoch\u2019s": {
+        "jet_name": 25,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Google\u2019s": {
+        "jet_name": 26,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Tyler Perry\u2019s": {
+        "jet_name": 27,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Tommy Hilfiger\u2019s": {
+        "jet_name": 28,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Elon Musk (plane #2)": {
+        "jet_name": 29,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Steve Ballmer\u2019s": {
+        "jet_name": 30,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Tiger Woods\u2019s": {
+        "jet_name": 31,
+        "total_emissions": 202227.88537862114,
+        "num_flights": 22,
+        "avg_distance": 1550229.1246094385,
+        "max_dist": 2811533.308983491,
+        "min_dist": 33503.05253597209
+    },
+    "Phil Knight\u2019s": {
+        "jet_name": 32,
+        "total_emissions": 4737.448508996624,
+        "num_flights": 3,
+        "avg_distance": 266318.15902004106,
+        "max_dist": 318943.48119730083,
+        "min_dist": 240005.49793141117
+    },
+    "Ronald Perelman\u2019s": {
+        "jet_name": 33,
+        "total_emissions": 61584.03207597619,
+        "num_flights": 13,
+        "avg_distance": 798918.172109491,
+        "max_dist": 3028565.3824525396,
+        "min_dist": 158779.57861039037
+    },
+    "Steven Spielberg\u2019s": {
+        "jet_name": 34,
+        "total_emissions": 8900.176408224756,
+        "num_flights": 1,
+        "avg_distance": 1500984.2902719183,
+        "max_dist": 1500984.2902719183,
+        "min_dist": 1500984.2902719183
+    },
+    "Mark Wahlberg\u2019s": {
+        "jet_name": 35,
+        "total_emissions": 78614.54254475665,
+        "num_flights": 4,
+        "avg_distance": 3314518.385207193,
+        "max_dist": 3943673.5234254724,
+        "min_dist": 1770205.0461763928
+    },
+    "Tom Cruise\u2019s": {
+        "jet_name": 36,
+        "total_emissions": 146069.0358679752,
+        "num_flights": 13,
+        "avg_distance": 1894926.3827589126,
+        "max_dist": 8764684.340514382,
+        "min_dist": 30666.89843531027
+    },
+    "Michael Jordan\u2019s": {
+        "jet_name": 37,
+        "total_emissions": 127907.84695483145,
+        "num_flights": 15,
+        "avg_distance": 1438081.3748387338,
+        "max_dist": 3853783.669689492,
+        "min_dist": 34025.54465131391
+    },
+    "Caesars Palace Casino\u2019s": {
+        "jet_name": 38,
+        "total_emissions": 76072.20115572776,
+        "num_flights": 7,
+        "avg_distance": 1832759.480966734,
+        "max_dist": 3626330.456591769,
+        "min_dist": 99904.59037378649
+    },
+    "Alex Rodriquez\u2019s": {
+        "jet_name": 39,
+        "total_emissions": 86309.13313966272,
+        "num_flights": 6,
+        "avg_distance": 2425956.651636398,
+        "max_dist": 3610922.5893132566,
+        "min_dist": 0
+    },
+    "Judge Judy\u2019s": {
+        "jet_name": 40,
+        "total_emissions": 86681.63405048731,
+        "num_flights": 9,
+        "avg_distance": 1624284.545948834,
+        "max_dist": 3581761.4780546925,
+        "min_dist": 373011.74052540987
+    },
+    "Peter Thiel\u2019s": {
+        "jet_name": 41,
+        "total_emissions": 47100.461331991224,
+        "num_flights": 3,
+        "avg_distance": 2647777.200556265,
+        "max_dist": 3971665.800834398,
+        "min_dist": 0
+    },
+    "Kylie Jenner\u2019s": {
+        "jet_name": 42,
+        "total_emissions": 18841.038093231295,
+        "num_flights": 1,
+        "avg_distance": 3177476.590713526,
+        "max_dist": 3177476.590713526,
+        "min_dist": 3177476.590713526
+    },
+    "Harrison Ford\u2019s": {
+        "jet_name": 43,
+        "total_emissions": 38211.16608300025,
+        "num_flights": 7,
+        "avg_distance": 920597.4830943912,
+        "max_dist": 3768167.361074338,
+        "min_dist": 55542.414623338016
+    },
+    "Michael Bloomberg (plane #1)": {
+        "jet_name": 44,
+        "total_emissions": 55392.50015860666,
+        "num_flights": 3,
+        "avg_distance": 3113918.523387157,
+        "max_dist": 3124079.5446852227,
+        "min_dist": 3093596.4807910263
+    },
+    "Nike Corporation\u2019s": {
+        "jet_name": 45,
+        "total_emissions": 164856.0250403622,
+        "num_flights": 15,
+        "avg_distance": 1853493.626737478,
+        "max_dist": 5528532.76415647,
+        "min_dist": 30323.81781618618
+    },
+    "Larry Ellison\u2019s": {
+        "jet_name": 46,
+        "total_emissions": 46776.912066854115,
+        "num_flights": 1,
+        "avg_distance": 7888766.125455196,
+        "max_dist": 7888766.125455196,
+        "min_dist": 7888766.125455196
+    },
+    "Dan Bilzerian\u2019s": {
+        "jet_name": 47,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Marc Benioff\u2019s": {
+        "jet_name": 48,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Dr. Phil\u2019s": {
+        "jet_name": 49,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Magic Johnson\u2019s": {
+        "jet_name": 50,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Kim Kardashian\u2019s": {
+        "jet_name": 51,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Michael Bloomberg (plane #2)": {
+        "jet_name": 52,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Jay Z\u2019s": {
+        "jet_name": 53,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Drake\u2019s": {
+        "jet_name": 54,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "George Lucas\u2019s": {
+        "jet_name": 55,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Floyd Mayweather\u2019s": {
+        "jet_name": 56,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Elton John\u2019s": {
+        "jet_name": 57,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    },
+    "Michael Bloomberg (plane #3)": {
+        "jet_name": 58,
+        "total_emissions": 0.0,
+        "num_flights": 0,
+        "avg_distance": 0,
+        "max_dist": 0,
+        "min_dist": 0
+    }
+}

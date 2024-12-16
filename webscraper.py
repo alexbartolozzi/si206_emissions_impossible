@@ -97,5 +97,3 @@ def finish_web_scrape():
     celeb_list = get_celebrity_airplanes()
     insert_data(celeb_list)
     print("Web scrape finished")
-
-finish_web_scrape()

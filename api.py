@@ -96,16 +96,27 @@ def get_list_of_src_dst_coords(list_of_flights):
     return src_dst_coords
 
 
-def fetch_flight_data(plane_icao, initial_date):
+def fetch_flight_data(plane_icao, initial_date, halfway=False):
     # phony auth somehow works
-    api = OpenSkyApi(username="username", password="password")
+    if halfway:
+        # api = OpenSkyApi(username="tropicalsimr", password="OPENSKY2024")
+        # api = OpenSkyApi(username="troptropsimr", password="OPENSKY2024")
+        api = OpenSkyApi(username="Lev2", password="Football96!")
+    else:
+        # Lev Football96!
+        # api = OpenSkyApi(username="troptropical", password="OPENSKY2024")
+        api = OpenSkyApi(username="Lev", password="Football96!")
     start_date = initial_date
     # lowercase the icao code
     plane_icao = plane_icao.lower()
 
     # list of tuples with src airport icao and dst airport icao
     list_of_flights = []
+    count = 0
     while True:
+        count += 1
+        if count > 24:
+            break
         start_date, end_date, done = gen_date_range(start_date)
         print(f"Fetching data from {start_date} to {end_date}")
         try:
@@ -124,6 +135,11 @@ def fetch_flight_data(plane_icao, initial_date):
         if done:
             break
         start_date = end_date
+        # prevents greater than 25 flights being logged
+        if len(list_of_flights) > 24:
+            break
+    if len(list_of_flights) > 24:
+        list_of_flights = list_of_flights[:24]
     return get_list_of_src_dst_coords(list_of_flights)
 
 # def fuel_consumption():
@@ -131,10 +147,4 @@ def fetch_flight_data(plane_icao, initial_date):
 #     url = 
 
 
-## Fuel Burn = (Fuel Consumption Rate) x (Flight Time or Distance)
-## Flight time = Distance (miles) / Cruise Speed (MPH)
-
-## Jet fuel emits approximately 9.57 kg of CO2 per gallon (or 3.16 kg of CO2 per liter) when burned.
-
-## CO2 Emissions (kg) = (Fuel Burn in liters) x (Emission Factor: 3.16 kg CO2/liter)
 

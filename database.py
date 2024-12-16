@@ -72,5 +72,3 @@ def create_db():
 def init_db():
     delete_existing_db()
     create_db()
-
-init_db()
