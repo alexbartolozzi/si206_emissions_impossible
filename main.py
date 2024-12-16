@@ -51,7 +51,24 @@ def build_up_db(run_count):
     conn.commit()
 
 def process_data_and_calc():
+    # vis 1: histogram of number of flights
 
+    # vis 2: bar chart top 5 celebs x axis, y axis emissions 
+
+    # vis 3: histogram of flight distance
+
+    # part 4 output all data to json file
+    celeb_name : {
+        "flights": [
+            {
+                "distance": 1234
+            },
+            ...
+        ],
+        "total_emissions": 1234
+        "num_flights": 1234
+
+    }
 
 
 
