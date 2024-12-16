@@ -105,7 +105,7 @@ def fetch_flight_data(plane_icao, initial_date, halfway=False):
     else:
         # Lev Football96!
         # api = OpenSkyApi(username="troptropical", password="OPENSKY2024")
-        api = OpenSkyApi(username="Lev", password="Football96!")
+        api = OpenSkyApi(username="Lev3", password="Football96!")
     start_date = initial_date
     # lowercase the icao code
     plane_icao = plane_icao.lower()
